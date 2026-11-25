@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مواقيت · الصلاة والأذكار</title>
+<meta name="description" content="مواعيد الصلاة بالطريقة المصرية، عدّاد للصلاة الجاية، اتجاه القبلة، وأذكار الصباح والمساء وبعد الصلاة والنوم بعدّاد.">
+<meta name="theme-color" content="#14100b">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header class="hero"><img class="logo" src="logo.svg" alt=""><div><h1>مواقيت</h1><p>مواعيد الصلاة والأذكار في مكان واحد</p></div></header>
+
+<section class="card next" aria-live="off">
+<div class="where"><span id="place-name">القاهرة</span> · <span id="hijri">–</span></div>
+<div class="nx-label">الصلاة الجاية</div>
+<div class="nx-name" id="nx-name">–</div>
+<div class="nx-count" id="nx-count" dir="ltr">--:--:--</div>
+<div class="nx-time" id="nx-time"></div>
+<p class="note" id="nx-note" hidden></p>
+</section>
+
+<section class="card">
+<h2>مواعيد النهارده</h2>
+<ul class="times" id="times"></ul>
+<p class="status" id="status" role="status">بحمّل المواعيد…</p>
+<p class="note" id="method-note"></p>
+</section>
+
+<section class="card">
+<h2>المكان والطريقة</h2>
+<div class="grid2">
+<label>المدينة<select id="place"></select></label>
+<label>طريقة الحساب<select id="method"></select></label>
+<label>العصر<select id="school"><option value="0">الجمهور (ظل المثل)</option><option value="1">الحنفي (ظل المثلين)</option></select></label>
+<div class="geo"><button id="geo" type="button" class="ghost">استخدم موقعي</button></div>
+</div>
+<p class="note">بتحدّد موقعك بس عشان تحسب المواعيد على جهازك. مبنخزّنهوش في أي سيرفر، وبيتحفظ على الجهاز بس.</p>
+<p class="status" id="geo-status" role="status"></p>
+</section>
+
+<section class="card">
+<h2>اتجاه القبلة</h2>
+<div class="qibla">
+<div class="rose" id="rose" aria-hidden="true"><i class="n">ش</i><b id="arrow"></b></div>
+<div>
+<div class="q-deg" id="q-deg">–</div>
+<div class="q-sub" id="q-sub"></div>
+<button id="compass" type="button" class="ghost">شغّل البوصلة</button>
+<p class="status" id="compass-status" role="status"></p>
+</div>
+</div>
+<p class="note">الرقم محسوب بالرياضيات من إحداثيات المكان والكعبة، وده الأدق. بوصلة الموبايل ممكن تغلط بسهولة (معادن، مغناطيس الجراب، معايرة). اتأكد دايمًا من علامة القبلة في المسجد أو من أكتر من مصدر.</p>
+</section>
+
+<section class="card">
+<h2>الأذكار</h2>
+<div class="tabs" id="adh-tabs" role="tablist" aria-label="أنواع الأذكار"></div>
+<div class="adh-head"><span id="adh-prog"></span><button id="adh-reset" type="button" class="ghost sm">ابدأ القسم من الأول</button></div>
+<div id="adh-list"></div>
+<p class="note">نص الأذكار من «حصن المسلم» لسعيد بن علي بن وهف القحطاني، مأخوذ من ملف JSON على GitHub (Alsarmad/Adhkar-json) كما هو. الملف مفيهوش تخريج الأحاديث ولا درجتها، والنص ماتراجعش على يد متخصص هنا. للتأكد ارجع لنسخة مطبوعة موثوقة.</p>
+</section>
+
+<footer>المواعيد من واجهة Aladhan. لو الحسبة اختلفت دقيقة عن مسجدك أو إمساكية بلدك، اعتمد التقويم المحلي. التاريخ الهجري محسوب ويمكن يختلف يوم عن رؤية الهلال الرسمية.</footer>
+</main>
+<script src="adhkar.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
